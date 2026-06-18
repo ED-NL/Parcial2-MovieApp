@@ -1,0 +1,35 @@
+import { useState, useEffect } from 'react'
+
+/**
+ * Custom hook para realizar peticiones fetch.
+ * Encapsula lógica de loading, error y datos.
+ * Se usa en MoviesPage y MovieDetailPage.
+ */
+const useFetch = (fetchFn) => {
+  const [data, setData] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    let cancelled = false
+    setLoading(true)
+    setError(null)
+
+    fetchFn()
+      .then(result => {
+        if (!cancelled) setData(result)
+      })
+      .catch(err => {
+        if (!cancelled) setError(err.message)
+      })
+      .finally(() => {
+        if (!cancelled) setLoading(false)
+      })
+
+    return () => { cancelled = true }
+  }, [])
+
+  return { data, loading, error }
+}
+
+export default useFetch
