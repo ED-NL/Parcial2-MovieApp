@@ -54,7 +54,7 @@ src/
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/TU-USUARIO/ParcialReact.git
+git clone https://github.com/ED-NL/Parcial2-MovieApp.git
 cd ParcialReact
 
 # Instalar dependencias
@@ -74,4 +74,4 @@ npm run deploy
 
 ## Demo
 
-🔗 https://TU-USUARIO.github.io/ParcialReact/
+🔗 https://github.com/ED-NL/Parcial2-MovieApp.git
