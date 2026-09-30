@@ -1,4 +1,4 @@
-# ParcialReact — MovieApp
+# React — MovieApp
 
 Aplicación web SPA desarrollada con React + Vite que consume la API pública [devsapihub.com/api-movies](https://devsapihub.com/api-movies).
 
